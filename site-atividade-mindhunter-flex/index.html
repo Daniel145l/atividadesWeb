@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="light.css" id="tema">
+  <title>My WebSite - With a flexible layout</title>
+</head>
+<body>
+
+  <header>
+    <h1>Filmes & Séries</h1>
+    <p>Tudo sobre <strong>entretenimento</strong> cinematográfico</p>
+    <button onclick="toggle()" id="dark">Modo escuro</button>
+    <button onclick="toggle()" id="light">Modo claro</button>
+  </header>
+
+  <nav id="menu" class="open">
+    <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">SOBRE</a></li>
+      <li><a href="#">SÉRIES</a></li>
+      <li><a href="#">FILMES</a></li>
+    </ul>
+  </nav>
+
+  <button onclick="showMenu()" class="menu-button">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAUVBMVEUAAAD///+FhYVOTk5WVlaqqqqJiYnq6urIyMiRkZEbGxs8PDzX19cFBQUMDAwsLCxxcXH39/dDQ0Pg4OC4uLjR0dGYmJhdXV2goKAmJiaysrK7rPKxAAACOklEQVR4nO2cy3bjIAxA5QT8SJyHW7tp5v8/dEpcamrmzNFOd6G7yvIecBACJGkyXT+E00VMuJzC0Hc/KpJ/DGcbn43zsJOK1kYrsZRqrW0y7SYVrF02QpbCjFOiXaUg31MmvqSsLfYkqcFaYs/QSGe+Pu05d9JbO9T0gpu9r/kT0BqVCXKyVqg5idG+4H9c5GqtUHOVm7VCzU3u1go1d4FFvkSU0VqhZpQJt1CFSRpcnOnT1uXN2uI3b6/91PvT2qPk+b5uh1ET2OfEYbY22Zi3FGuxdsksZTI6tYAYeG2nXdo+HqydDmN1lpC84kd7MKH9iGMhUkphcCktLqXFpbS4lBaX0uJSWlxKi0tpcSktLqXFpbS4lBaX0uJSWgqpbr6HoxHhPnf/kJof1udTj3kntSCO+MNSSmEuaOImBXrC0WYpzDgl4iqFOtt/ne5/SaFuQUSeSQo1eYnYyHS0lthznARzA7KxyKe1Qs2nmEeXmofA/nuJJ/NZCVIKOX3IDx25JCAXT2SYQQZk5taFucljTWAkJw6gsfpDT0aZaTv0gIOES2lxKS0upcWltLiUFpfS4lJaXEqLS2lxKS0upcWltLiUFpfSwi7mAZY9EQvEMHchRSkdsegQdbr/XZ6JLGQllvyiJi/RN8wycmTBPeZaZiMymzgg210AYt6eK/NZCbLZDG6ZSm15kA2McFEmtXpCNsVCtg9jNlrjPEpYidzmfcw2h6CxastkFPJd/Wqd2SCbjDaodqx/AXfdNBYCQq+sAAAAAElFTkSuQmCC" alt="" height="20px">
+  </button>
+  
+  <section>
+
+    <!-- parte lateral do site com conteúdo complementar -->
+    <aside>
+      <!-- primeira seção -->
+      <section class="about">
+        <h3><strong>David Fincher</strong></h3>
+        <p>Foto de David Fincher:</p>
+        <figure class="picture">
+          <img src="https://variety.com/wp-content/uploads/2023/09/david-fincher.jpg?w=250&h=140&crop=1" alt="David Fincher">
+          <figcaption>David Fincher - Direteor</figcaption>
+        </figure>
+        <p>David Fincher (born Aug. 28, 1962) is an American filmmaker known for directing psychological thrillers.</p>
+      </section>
+
+      <!-- segunda seção -->
+      <section class="more">
+        <h4><strong>Mais filmes do David Fincher</strong></h4>
+        <p><strong>Aqui estão alguns outros filmes do David Fincher</strong></p>
+        <figure class="picture small">
+          <img src="https://rollingstone.com.br/media/_versions/brad_pitt_em__se7en_-_os_sete_crimes_capitais_foto_divulgacao_widelg.jpg" alt="Se7en">
+          <figcaption>Se7ven (1995)</figcaption>
+        </figure>
+        <figure class="picture small">
+          <img src="https://sm.ign.com/t/ign_br/screenshot/default/fight-club-1999-06-g_czdn.1920.jpg" alt="Clube da luta">
+          <figcaption>Clube da luta (1999)</figcaption>
+        </figure>
+        <figure class="picture small">
+          <img src="https://destrutor.com.br/wp-content/uploads/2021/08/Zodiaco-43.jpg" alt="Zodíaco">
+          <figcaption>Zodíaco (2007)</figcaption>
+        </figure>
+      </section>
+    </aside>
+
+    <!-- conteúdo principal do blog -->
+    <main>
+      <h2><b>MINDHUNTER</b></h2>
+      <p class="center">Daniel Ulisses, Mai 7, 2025</p>
+      <figure class="picture">
+        <img src="https://thereviewbooks.com.br/wp-content/uploads/mindhunder-1024x672.jpg" alt="Mindhunter" class="img-main">
+        <figcaption>Mindhunter</figcaption>
+      </figure>
+      <p>Mindhunter (conhecido como Caçador de Mentes em Portugal) é uma série de televisão norte-americana de drama policial criada por Joe Penhall, e baseada no livro Mind Hunter: Inside the FBI’s Elite Serial Crime Unit escrito por John E. Douglas e Mark Olshaker. A série é produzida por David Fincher e Charlize Theron entre outros, e estreou na Netflix em 13 de outubro de 2017. Mindhunter foi renovada para uma segunda temporada em abril de 2017, seis meses antes da estreia da primeira. A série se passa em 1977 e gira em torno de dois agentes do FBI, interpretados por Jonathan Groff e Holt McCallany, que entrevistam assassinos em série presos para tentar resolver casos em andamento.</p>
+      <p>Em fevereiro de 2016, a Netflix anunciou que a produção da Mindhunter seria em Pittsburgh, Pensilvânia. As filmagens começaram em maio de 2016, e as chamadas de seleção (escalação) foram realizadas em 16 de abril e 25 de junho de 2016. A série foi renovada por uma segunda temporada antes de sua estreia pela Netflix.
+      O personagem de Holden Ford é baseado no agente do FBI John E. Douglas, e Bill Tench é baseado no agente do FBI, Robert K. Ressler. A Dra. Wendy Carr é baseada na psicóloga Dra. Ann Wolbert Burgess, professora proeminente do Boston College, cujo trabalho se baseia no tratamento de sobreviventes de trauma de abuso sexual e no estudo do processo de pensamento de criminosos violentos. Os personagens assassinos foram modelados nos criminosos condenados e os cenários de prisões foram retirados de entrevistas reais.</p>
+    </main>
+  </section>
+
+  <footer>
+    <p>Todos os direitos reservados &copy; </p>
+  </footer>
+
+  <script>
+
+    // mostrar/esconder menu
+    function showMenu() {
+        //adiciono ou retiro classes para mostrar ou esconder
+      let menu = document.getElementById("menu");
+      if(menu.classList.contains("close")) {
+        menu.classList.add("open");
+        menu.classList.remove("close")
+      }else {
+        menu.classList.add("close");
+        menu.classList.remove("open");
+      }
+    }
+
+    // mudar tema (light/dark)
+    function toggle() {
+        // mudo o valor do href
+      let link = document.getElementById("tema");
+      if(link.href.includes("light")) {
+        link.href = "dark.css";
+      }else {
+        link.href = "light.css";
+      }
+    }
+  </script>
+</body>
+</html>
