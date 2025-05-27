@@ -1,0 +1,100 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+
+    <style>
+
+      /* estiização default */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* centralizando conteúdo */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* centralizando conteúdo e definido espaços */
+      section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+
+      /* definindo um tamnho padrão para evitar quebra de conteúdo */
+      figure {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        text-align: center;
+      }
+
+      figure img {
+        max-height: 100%;
+      }
+
+
+      /* corrigindo espaçamentos */
+      div {
+        display: flex;
+        gap: 30px;
+      }
+
+      button {
+        padding: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- seção com os conteúdos -->
+    <section>
+      <figure>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Pokemon" id="imgPokemon">
+        <figcaption>Pokemons</figcaption>
+      </figure>
+      <!-- botões -->
+      <div>
+        <button onclick="previus()">Voltar -1</button>
+        <button onclick="next()">Adiantar +1</button>
+      </div>
+    </section>
+
+    <!-- javaScript -->
+    <script>
+      // definindo duas variáveis: uma é o elemento modificado (img) e a outra é o índice da imagem (value)
+      let img = document.getElementById("imgPokemon");
+      let value = 1;
+
+      // ao clicar no botão de adiantar o código irá checar se o value é igual a 100, caso seja, não acontecerá nada, caso não seja o value será incrementado em 1
+      function next() {
+        if(value === 100) value = 100;
+        else value = value + 1;
+        // modifico a imagem usando concatenação, no lugar o índice coloco o valor de value
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${value}.svg`
+      }
+
+      // ao clicar no botão de voltar o código irá checar se o value é igual a 1, caso seja, não acontecerá nada, caso não seja o value será decrementado em 1
+      function previus() {
+        if(value === 1) value = 1;
+        else value = value - 1;
+        // modifico a imagem usando concatenação, no lugar o índice coloco o valor de value
+        img.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${value}.svg`;
+      }
+    </script>
+  </body>
+  </html>
