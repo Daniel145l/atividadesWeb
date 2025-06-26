@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alunos UFC</title>
+
+  <style>
+    table, td, th {
+      border: 1px solid #000;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alunos da ufc</h1>
+  </header>
+  <form onsubmit="criarAluno(event)">
+    <input type="text" id="nomeAluno" required placeholder="Nome do aluno">
+    <input type="text" id="cursoAluno" required placeholder="Curso do aluno">
+    <input type="number" id="iraAluno" required placeholder="IRA do aluno">
+
+    <button type="submit">Criar aluno</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Curso</th>
+        <th>IRA</th>
+      </tr>
+    </thead>
+    <tbody id="table-alunos"></tbody>
+  </table>
+  <h2 id="media"></h2>
+
+  <script>
+   async function consumirAPI() {
+	const response = await fetch("http://localhost:3000/alunos/listar");
+	const alunos = await response.json();
+
+	const tbody = document.getElementById("table-alunos");
+	tbody.innerHTML = "";
+
+	let iraSum = 0;
+
+	for(let i = 0; i < alunos.length; i++) {
+		const aluno = alunos[i];
+		iraSum += aluno.ira;
+
+		const tr = document.createElement("tr");
+		tr.innerHTML = `
+		<td>${aluno.nome}</td>
+		<td>${aluno.curso}</td>
+		<td>${aluno.ira}</td>
+		<td>
+      <a href="editar_alunos.html?id=${aluno.id}">Editar</a>
+			<button onclick="excluirAluno(${aluno.id})">Excluir</button>
+		</td>
+		`;
+		console.log(aluno);
+		tbody.appendChild(tr);
+	}
+
+	const media = iraSum / alunos.length;
+	document.getElementById("media").innerText = `Média dos IRA's: ${media.toFixed(2)}`;
+   }
+
+   async function criarAluno(event) {
+     event.preventDefault();
+
+     const nome = document.getElementById("nomeAluno").value;
+     const curso = document.getElementById("cursoAluno").value;
+     const ira = parseFloat(document.getElementById("iraAluno").value);
+
+     const novoAluno = { nome, curso, ira };
+
+     const response = await fetch("http://localhost:3000/alunos/criar", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: JSON.stringify(novoAluno)
+     });
+
+     if (response.ok) {
+       alert("Aluno criado com sucesso!");
+       consumirAPI();
+     } else {
+       alert("Erro ao criar aluno.");
+     }
+   };
+
+   async function excluirAluno(id) {
+     const response = await fetch(`http://localhost:3000/alunos/apagar/${id}`, {
+       method: 'DELETE'
+     });
+	 consumirAPI();
+   }
+   consumirAPI();
+  </script>
+</body>
+</html>

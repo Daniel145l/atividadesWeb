@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar aluno</title>
+</head>
+<body>
+  <header>
+    <h1>Editar Aluno</h1>
+  </header>
+
+  <form onsubmit="editarAluno(event)">
+    <input type="text" id="nomeAluno" required placeholder="Nome do aluno">
+    <input type="text" id="cursoAluno" required placeholder="Curso do aluno">
+    <input type="number" id="iraAluno" required placeholder="IRA do aluno">
+    <button type="submit">Atualizar</button>
+  </form>
+
+  <script>
+    const params = new URLSearchParams(document.location.search.substring(1));
+    const id = params.get("id");
+    
+    fetch(`http://localhost:3000/alunos/pegarId/${id}`)
+      .then(response => response.json())
+      .then(json => {
+        document.getElementById("nomeAluno").value = json.nome;
+        document.getElementById("cursoAluno").value = json.curso;
+        document.getElementById("iraAluno").value = json.ira;
+      })
+      .catch(error => {
+        console.error("Erro ao buscar aluno:", error);
+      });
+
+      async function editarAluno(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nomeAluno").value;
+        const curso = document.getElementById("cursoAluno").value;
+        const ira = document.getElementById("iraAluno").value;
+
+        const alunoAtualizado = {nome, curso, ira};
+
+        const response = await fetch(`http://localhost:3000/alunos/atualizar/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(alunoAtualizado)
+        });
+
+        const json = await response.json();
+        console.log(json);
+        
+      }
+  </script>
+</body>
+</html>
