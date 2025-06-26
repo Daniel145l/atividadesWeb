@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 04</title>
+
+  <style>
+    /* estilização padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* definindo estilização do card */
+    div.notification-card {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FFF;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, .5);
+      font-family: Arial, Helvetica, sans-serif;
+      width: 250px;
+    }
+
+    /* primeira parte do card (header), atribuindo estilos ao "X" */
+    div.card-header button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      font-size: 17px;
+    }
+
+    /* modificando espaçamento */
+    div.card-content h3{
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- código do card -->
+  <div class="notification-card" id="notify">
+    <div class="card-header">
+      <button class="close-btn" onclick="closeNotify()">X</button>
+    </div>
+    <div class="card-content">
+      <h3>Novidade!</h3>
+      <p>Confira nossos novos produtos.</>
+      </div>
+  </div>
+
+  <!-- texto aleatório para verificar rolagem -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non animi recusandae ad ipsam quibusdam, hic architecto eius, necessitatibus voluptate maxime blanditiis reiciendis nisi vitae corrupti sint! Odio illum voluptatibus similique.</p>
+
+  <!-- (5ª QUESTÃO) pego o card usando o id, ao clicar no botão a função troca o display flex para o display none -->
+  <script>
+    let card = document.getElementById("notify");
+    function closeNotify() {
+      card.style.display = "none";
+    }
+  </script>
+</body>
+</html>

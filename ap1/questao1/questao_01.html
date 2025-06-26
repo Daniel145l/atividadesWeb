@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questão 1</title>
+
+  <style>
+    /* estilização padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* estilizando o header */
+    header {
+      text-align: center;
+      padding: 25px;
+      background-color: #cf1717;
+      color: #FFF;
+    }
+
+    /* definindo as propriedades da section (parte após o header) */
+    section {
+      display: flex; 
+      width: 100%;
+    }
+
+    /* aside lateral e estilizações */
+    aside {
+      width: 30%;
+      background-color: #CFCFCF;
+      padding: 25px;
+    }
+
+    /* tirando os efeitos de lista */
+    aside nav ul li {
+      list-style-type: none;
+      padding: 10px;
+    }
+
+    /* tirando os efeitos de link */
+    aside nav ul li a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* conteúdo principal (ao lado do aside) */
+    main {
+      width: 70%;
+      padding: 25px;
+      background-color: antiquewhite;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    main div {
+      height: 200px;
+      background-color: aqua;
+      width: 220px;
+      padding: 5px;
+    }
+
+    /* footer do site  */
+    footer {
+      width: 100%;
+      text-align: center;
+      background-color: #a49393;
+      padding: 25px;
+    }
+
+    /* responsividade */
+    @media screen and (max-width: 400px) {
+      /* flex-column */
+      section {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* centralização e largura */
+      aside {
+        width: 100%;
+        text-align: center;
+      }
+
+      /* largura */
+      main {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- cabeçalho do site -->
+  <header>
+    <h1>Desenvolvimento de software WEB</h1>
+  </header>
+    <section>
+      <!-- lateral da seção -->
+      <aside>
+        <!-- navbar com os links de navegação -->
+        <nav>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- conteúdo principal -->
+      <main>
+        <h2>Introdução ao HTML</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius voluptatem rem expedita doloribus omnis, quos magni corrupti modi laboriosam? Molestiae accusamus aliquid hic ratione ullam libero ipsam illum rem perspiciatis.</p>
+        <div>Imagem</div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur aut, in incidunt deleniti illo maxime rerum nam aperiam deserunt, exercitationem voluptatibus eius rem id officia earum, saepe nobis neque eveniet?</p>
+        <div>Imagem</div>
+      </main>
+    </section>
+    <!-- footer no final do site -->
+    <footer>
+      <i>
+        <a href="mailto:daniellucasm18@gmail.com">daniellucasm18@gmail.com</a>
+        <p>2025.1</p>
+        <p>Todos os direito reservados</p>
+      </i>
+    </footer>
+</body>
+</html>
