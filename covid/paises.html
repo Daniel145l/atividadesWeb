@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade Covid Países</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+      text-align: center;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background-color: aliceblue;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    table {
+      margin: 0 auto;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 10px;
+      border: 2px solid black;
+      color: white;
+      background-color: #000;
+
+      &:hover {
+        background-color: #FFF;
+        color: black;
+        transition: all 0.3s ease;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <th>Nome do País</th>
+      <th>Número de Casos Confirmados</th>
+      <th>Número de Falecimentos</th>
+    </thead>
+    <tbody id="tabela-paises-corpo"></tbody>
+    <tfoot>
+      <tr>
+        <td>Médias</td>
+        <td id="m-casos"></td>
+        <td id="m-falecimentos"></td>
+      </tr>
+    </tfoot>
+  </table>
+  <h3 id="maior-relacao">Maior relação: </h3>
+  <h3 id="menor-relacao">Menor relação: </h3>
+  <a href="estados.html">Ver dados por Estados</a>
+
+  <script>
+    async function pegaDados() {
+      const response = await fetch('https://covid19-brazil-api.now.sh/api/report/v1/countries'); // url da api que fornece os dados dos PAISES brasileiros
+      const data = await response.json();
+      console.log(data); //apenas para verficar os dados que estão sendo recebidos
+      const paises = data.data;
+
+      const tbody = document.getElementById('tabela-paises-corpo');
+      let totalCasos = 0;
+      let totalSuspeitos = 0;
+      let totalFalecimentos = 0;
+      let maiorRelacao = { pais: "", valor: 0 };
+      let menorRelacao = { pais: "", valor: Infinity }; //valor infinity pq preciso encontrar o menor valor no foreach
+
+      paises.forEach(pais => {
+        const tr = document.createElement('tr');
+        //optei por retirar os dados null (que são casos e recuperados)
+        tr.innerHTML = `
+          <td>${pais.country}</td>
+          <td>${pais.confirmed}</td>
+          <td>${pais.deaths}</td>
+        `;
+        tbody.appendChild(tr);
+
+        totalCasos += pais.confirmed;
+        totalFalecimentos += pais.deaths;
+
+        //como não há dados de suspeitor, não há como calulcar a relação, então fiz a relação confirmados/mortes
+        const relacao = pais.confirmed / (pais.deaths || 1); // lembrar de sempre colocar o 1 para evitar divisão por 0 (não posso esquecer)
+        if (relacao > maiorRelacao.valor) {
+          maiorRelacao = { pais: pais.country, valor: relacao };
+        }
+        if (relacao < menorRelacao.valor) {
+          menorRelacao = { pais: pais.country, valor: relacao };
+        }
+
+        if (pais.country.toLowerCase() === 'brazil') {
+          tr.style.backgroundColor = 'lightgreen';
+        }
+      });
+
+      const numPais = paises.length;
+      const mediaCasos = (totalCasos / numPais).toFixed(2);
+      const mediaFalecimentos = (totalFalecimentos / numPais).toFixed(2);
+
+      document.getElementById('m-casos').textContent = mediaCasos;
+      document.getElementById('m-falecimentos').textContent = mediaFalecimentos;
+
+      document.getElementById('maior-relacao').textContent = `Maior relação: ${maiorRelacao.pais} (${maiorRelacao.valor.toFixed(2)})`;
+      document.getElementById('menor-relacao').textContent = `Menor relação: ${menorRelacao.pais} (${menorRelacao.valor.toFixed(2)})`;
+    }
+
+    pegaDados();
+  </script>
+</body>
+</html>
